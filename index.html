@@ -1,22 +1,130 @@
 <!DOCTYPE html>
 <html lang=es>
 	<head>
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+
 		<!-- CSS  -->	
  		<link rel="stylesheet" href="css/materialize.min.css">
- 		<link rel="stylesheet" href="css/index.css">
+ 		<link rel="stylesheet" href="css/main.css">
 
  		<!-- JavaScript -->
   		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>-->
   		<script language="JavaScript" type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
   		<script language="JavaScript" type="text/javascript" src="js/materialize.min.js"></script>
+  		<script language="JavaScript" type="text/javascript" src="js/main.js"></script>
 
   		<!-- TITLE -->
 		<title>Congelados Salomia</title>
 		<link rel="shortcut icon" href="logo1_icon.ico" type="image/x-icon" /> <!-- Hex color: 7803c5 (Fuente de liro: Abel) (Fuente de E: Monoton) (Grados de E: 315°)--> 
+
+		
+
 	</head>
 
 	<body style="background-color: #212121">
-		
+			<header>
+				<nav class="nav1 orange accent-2">
+		    		<div class="nav-wrapper">
+		    			<a href="?"><img class="brand-logo center logo" src="img/logo3.png"></a>
+		    		</div>
+		  		</nav>
+		  		<nav class="nav-center orange accent-1">
+		    		<div class="nav-wrapper">
+		    			<ul>
+				            <li class="center"><a  href="/about">Sobre nosotros</a></li>
+				            <li class="center"><a href="/contact">Productos</a></li>
+				            <li class="center"><a href="/help">Contactanos</a></li>
+				        </ul>
+		    		</div>
+		  		</nav>
+	  		</header>
+	  		<main>
+			 <div class="parallax-container">
+			  	<div class="parallax"><img src="img/parallax1.jpg"></div>
+			 </div>
+			  	<div class="section white">
+			    	<div class="row container">
+			      		<h2 class="header">Parallax</h2>
+			      		<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+			      		<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+			      		<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+			      		<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+			      		<p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+			    	</div>
+			  	</div>
+			  <div class="parallax-container">
+			  	<div class="parallax"><img src="img/parallax2.jpg"></div>
+			  </div>
+			  <div class="section white">
+			    	<div class="row container">
+			      		<h2 class="header">Donde estamos?</h2>
+			      		<div id="map"></div>
+			      		<script>
+						      var map;
+						      function initMap() {
+						      	var myLatlng = new google.maps.LatLng(3.43456,-76.52954);
+						      	var imagePath = 'http://m.schuepfen.ch/icons/helveticons/black/60/Pin-location.png';
+						        map = new google.maps.Map(document.getElementById('map'), {
+						          center: myLatlng,
+						          zoom: 19
+						        });
+						        // Marcador
+						        var marker = new google.maps.Marker({
+									position: myLatlng,
+									map: map,
+									icon: imagePath,
+									title: 'Dirección Congelados Salomia'
+									});
+						        var contentString = 'Congelados Salomia: Calle 12 #23a - 54';
+								//Información de la dirección al hacer clic
+								var infowindow = new google.maps.InfoWindow({
+									content: contentString,
+									maxWidth: 500
+								});
+								//Crear ventana con info de la direccion
+								google.maps.event.addListener(marker, 'click', function() {
+									infowindow.open(map,marker);
+								});
+								//Funcion para cambiar de tamaño
+								google.maps.event.addDomListener(window, "resize", function() {
+											var center = map.getCenter();
+											google.maps.event.trigger(map, "resize");
+											map.setCenter(center);
+										});
+									}
+					    </script>
+					    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7KG_zNSFYAS8MXV6Obc7BM3ThP_0YUbE&callback=initMap" async defer></script>
+			    	</div>
+			  	</div>
+			  <div class="parallax-container">
+			  	<div class="parallax"><img src="img/parallax3.jpg"></div>
+			  </div>
+			</main>
+			<footer class="page-footer orange accent-2">
+	          <div class="container">
+	            <div class="row">
+	              <div class="col l6 s12">
+	                <h5 class="white-text">Footer Content</h5>
+	                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+	              </div>
+	              <div class="col l4 offset-l2 s12">
+	                <h5 class="white-text">Links</h5>
+	                <ul>
+	                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+	                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+	                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+	                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+	                </ul>
+	              </div>
+	            </div>
+	          </div>
+	          <div class="footer-copyright">
+	            <div class="container">
+	            © 2017 Todos los derechos reservados
+	            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+	            </div>
+	          </div>
+        	</footer>
 	</body>
 	
   	

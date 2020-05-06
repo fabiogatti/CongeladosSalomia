@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^username/(.*) http://localhost/CongeladosSalomia/php/rest.php?key=3 [R,L]

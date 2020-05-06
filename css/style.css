@@ -1,0 +1,269 @@
+@font-face {
+font-family: 'GeosansLight';
+font-style: normal;
+font-weight: normal;
+src: local('GeosansLight'), url('../fonts/GeosansLight.woff') format('woff');
+}
+
+@font-face {
+font-family: 'GeosansLight-Oblique';
+font-style: normal;
+font-weight: normal;
+src: local('GeosansLight-Oblique'), url('../fonts/GeosansLight-Oblique.woff') format('woff');
+}
+
+.logo {
+    width: 5.5em;
+    height: auto;
+}
+
+.nav1 {
+    height: 7em;
+    line-height: 7em;
+    /*background-color: #8a008a;
+	background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");*/
+ }
+
+ .navbartext{
+ 	font-size: 1.2em;
+ }
+
+nav{
+	/*background-image: url('../img/cream-dust.png');
+	background-image: url('../img/mirrored-squares.png');*/
+	background-image: url('');
+}
+
+footer{
+	/*background-image: url('../img/cream-dust.png')
+	background-image: url('../img/mirrored-squares.png');*/
+	background-image: url('');
+}
+
+nav.nav-center ul {
+    text-align: center;
+}
+nav.nav-center ul li {
+    display: inline;
+    float: none;
+}
+nav.nav-center ul li a {
+    display: inline-block;
+}
+
+.pager{
+	display: inline-block !important;
+}
+
+/*.active{
+	background-color: rgba(255,167,38,1) !important;
+}*/
+
+
+#map{
+	min-height: 30em;
+	min-width: 30em;
+	position:relative;
+}
+
+/* Parte de productos.html */
+.collapsedlink{
+	color: white !important;
+	width: 100% !important;
+}
+
+.tabs{
+	padding: 0px !important;
+}
+
+.tabtitle{
+	color:white !important;
+}
+
+.food-img{
+	/*width: 22.5em;*/
+	width: 350px;
+	height: 250px;
+}
+
+/* Flexbox que permite las imagenes responsive y de tamaño fijo */
+.tab-item{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+/* Para hacer que las imagenes no tengan espacio entre cada una*/
+.div-img{
+	box-sizing: border-box;
+	/*width: 22.5em;*/
+	width: 350px;
+	height: auto;
+	/*background-image: url("../img/60-lines.png");*/
+	/*background-image: url("../img/argyle.png");*/
+	/*background-image: url("../img/always-grey.png");*/
+	background-image: url("../img/asfalt-dark.png");
+}
+
+.text{
+	/*border-style: solid;
+    border-width: 0px 2px 0px 2px;*/
+    margin:0px;
+    font-family:'GeosansLight-Oblique';
+    font-size: 1.3em;
+}
+
+.bodyimg{
+	/*background-image: url("../img/argyle.png");*/
+	background-image: url("../img/black-linen.png");
+}
+
+.innertext{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.indicator{
+	background-color: #e00813 !important; /* Este es el color hex del rojo del logo*/
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+   flex: 1 0 auto;
+}
+
+h3{
+  color:#ffb74d;
+  /*text-align: center;*/
+}
+
+p{
+  color:white;
+  /*text-align: center;*/
+}
+
+
+/* About-us.html list */
+.elem{
+	list-style-type:disc !important;
+	/*list-style-type:circle !important;*/
+	color: white !important;
+	margin-left: 20px !important;
+}
+
+/* Index2.html */
+/* Indicators */
+.slider .indicators{
+	top:560px !important;
+	z-index: 10 !important;
+	height: 20px !important;
+}
+.indicator-item{
+	background-color: white !important;
+}
+
+.indicator-item.active{
+	/*background-color:#e00813 !important;*/
+	background-color:#ff9800 !important;
+}
+
+.button{
+	z-index: 10;
+	height: 600px;
+	width: 150px;
+	display: inline;
+	position: absolute;
+	/*color: rgba(255,167,38,0.5);*/
+	background-color: rgba(255,167,38,0.125);
+	border-style: none;
+}
+
+.button:hover{
+	/*color: rgba(255,167,38,0.5);*/
+	background-color: rgba(255,167,38,0.175);
+}
+
+.button:focus{
+	background-color: rgba(255,167,38,0.125);
+}
+
+#btn-right{
+	float: right !important;
+	right: 0px;
+	background: linear-gradient(to right, rgba(255,167,38,0.05), rgba(255,167,38,0.5));
+}
+
+#btn-left{
+	background: linear-gradient(to right, rgba(255,167,38,0.5), rgba(255,167,38,0.05));
+}
+
+#btn-right:hover{
+	background: linear-gradient(to right, rgba(255,167,38,0.1), rgba(255,167,38,0.55));
+}
+
+#btn-left:hover{
+	background: linear-gradient(to right, rgba(255,167,38,0.55), rgba(255,167,38,0.1));
+}
+
+.material-icons{
+	font-size: 5em;
+	color: rgba(255,167,38,0.75);
+}
+
+.carousel-content-title{
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.carousel-content-desc{
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	padding-left: 3em;
+	padding-right: 3em;
+	padding-top: 4em;
+}
+
+.small-slider{
+    /* ... */
+    position: relative;
+}
+
+.small-item{
+	position: absolute;
+}
+
+.small-item h4, .small-item h5{
+	color:#ffb74d;
+	padding: 10px;
+}
+
+.small-item h4{
+	padding-top: 20px;
+}
+
+.medium-item{
+	position: absolute;
+}
+
+.medium-item h4, .medium-item h5{
+	color:#ffb74d;
+	padding: 10px;
+	padding-right: 30px;
+	padding-left: 30px;
+}
+
+.medium-item h4{
+	padding-top: 60px;
+}

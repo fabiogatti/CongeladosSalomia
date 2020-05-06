@@ -1,0 +1,112 @@
+/* label color */
+.input-field label{
+  color: white;
+}
+/* label focus color */
+.input-field input:focus + label, .input-field textarea:focus + label{
+  color: #ffb74d !important;
+}
+/* label underline focus color */
+.input-field input:focus, .input-field textarea:focus{
+  border-bottom: 1px solid #ffb74d !important;
+  box-shadow: 0 1px 0 0 #ffb74d !important;
+}
+/* valid color */
+.input-field input.valid {
+  border-bottom: 1px solid green;
+  box-shadow: 0 1px 0 0 green;
+}
+.input-field input.valid:hover{
+  border-bottom: 1px solid green;
+  box-shadow: 0 1px 0 0 green;
+}
+/* invalid color */
+.input-field input.invalid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+.input-field input{
+  border-bottom: 1px solid white !important;
+}
+
+.input-field textarea{
+  border-bottom: 1px solid white !important;
+  box-shadow: 0 1px 0 0 white !important;
+}
+
+.input-field textarea[type=text]:focus{
+  border-bottom: 1px solid #ffb74d !important;
+  box-shadow: 0 1px 0 0 #ffb74d !important;
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #000;
+}
+
+.input-field textarea.valid {
+  border-bottom: 1px solid green !important;
+  box-shadow: 0 1px 0 0 green !important;
+}
+
+.btn{
+  background-color: #ffa726;
+}
+
+.btn:hover{
+  background-color: #ff9800;
+}
+
+.btn:focus{
+  background-color: #fb8c00;
+}
+
+#map{
+  margin-top: 2em;
+  border-width: 2px 2px 2px 2px;
+  border-style: solid;
+  border-color: #ffb74d;
+}
+
+a{
+  color:inherit;
+}
+
+.msg{
+  margin-top: 1em;
+}
+
+input.invalid+label:after{
+  top:40px;
+}
+
+/*input.invalid+label:active{
+  top:60px;
+}*/
+
+/*label:after{
+  top:10px;
+  padding-top: 0px;
+}*/
+
+/*.map-container{
+  border-width: 2px 2px 2px 2px;
+  border-style: solid;
+  border-color: #ffb74d;
+}*/
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 1px solid green;
+  transition: background-color 5000s ease-in-out 0s;
+}

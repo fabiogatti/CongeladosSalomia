@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Crear pedido - Congelados Salomia</title>
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+
+	<link rel="stylesheet" href="style.css">
+
+
+
+
+
+</head>
+
+<body class="flexColumn">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+	
+	<!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+	<script src="https://kit.fontawesome.com/49069adac5.js" crossorigin="anonymous"></script>
+
+
+
+	<script type="text/javascript" src="js/main.js"></script>
+	
+	<div id="logo" class="flexColumn">
+		<img src="img/logo1.png">
+		<h2>Nuevo pedido</h2>
+	</div>
+
+	<div id="mainContent" class="scrollbar-sunny-morning">
+
+		<div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center">
+			<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="z-index: -1">
+			  <div class="toast-header">
+			    <strong class="mr-auto">Exito</strong>
+
+			    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+			      <span aria-hidden="true">&times;</span>
+			    </button>
+			  </div>
+			  <div class="toast-body">
+			    Producto añadido exitosamente
+			  </div>
+			</div>
+		</div>
+		
+		<div class="item flexColumn productBox ">
+			<p>Agregar nuevo producto</p>
+			<div class="dropdown">
+			  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Producto
+			  <span class="caret"></span></button>
+			  <ul class="dropdown-menu scrollbar-sunny-morning">
+			    <li class="option"><a href="#" class="dropdown-item">Empanada Coctel</a></li>
+			    <li class="option"><a href="#" class="dropdown-item">Empanada Pañuelo</a></li>
+			    <li class="option"><a href="#" class="dropdown-item">Empanada Media Luna</a></li>
+			    <li class="option"><a href="#" class="dropdown-item">Empanada Media Luna Mini</a></li>
+			    <li class="option"><a href="#" class="dropdown-item">Empanada Borde Mediano</a></li>
+			    <li role="separator" class="divider dropdown-divider"></li>
+			    <li class="option"><a href="#" class="dropdown-item">Dedo de Queso Super</a></li>
+			    <li class="option"><a href="#" class="dropdown-item">Dedo de Queso Liso</a></li>
+			    <li class="option"><a href="#" class="dropdown-item">Dedo de Queso Torneado</a></li>
+			    <li class="option"><a href="#" class="dropdown-item">Dedo Salchicha</a></li>
+			    <li class="option"><a href="#" class="dropdown-item">Dedo Hawaiano</a></li>
+			    <li class="option"><a href="#" class="dropdown-item">Dedo Bocadillo</a></li>
+			    <li role="separator" class="divider dropdown-divider"></li>
+			    <li class="option"><a href="#" class="dropdown-item">Pastel de Pollo</a></li>
+			    <li class="option"><a href="#" class="dropdown-item">Pastel Ranchero</a></li>
+			    <li class="option"><a href="#" class="dropdown-item">Pastel de Carne</a></li>
+			    <li class="option"><a href="#" class="dropdown-item">Pastel Hawaiano</a></li>
+			    <li class="option"><a href="#" class="dropdown-item">Pastel Yuca Carne</a></li>
+			    <li class="option"><a href="#" class="dropdown-item">Pastel Yuca Carne Mini</a></li>
+			    <li role="separator" class="divider dropdown-divider"></li>
+			    <li class="option"><a href="#" class="dropdown-item">Papa Rellena</a></li>
+			    <li class="option"><a href="#" class="dropdown-item">Papa Rellena Mini</a></li>
+			    <li class="option"><a href="#" class="dropdown-item">Hojaldre</a></li>
+			    <li class="option"><a href="#" class="dropdown-item">Rosquilla</a></li>
+			  </ul>
+			</div>
+			<p class="item">Cantidad de paquetes</p>
+			<input class="quantity" type="number" value="0">
+			<p class="item">Subtotal</p>
+			<p class="subTotal">0</p>
+			<button type="button" class="btn btn-default add">
+			  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Agregar
+			</button>
+		</div>
+
+		<div class="item flexColumn">
+			<p>Fecha de entrega</p>
+			<input type="text" id="datepicker">
+		</div>
+
+		<div class="item flexColumn">
+			<p>Nombre del cliente</p>
+			<input type="text" id="clientName">
+		</div>
+
+		<div class="item flexColumn">
+			<p>Telefóno de contacto</p>
+			<input type="number" id="clientPhone">
+		</div>
+
+		<div class="item flexColumn">
+			<p>Dirección de entrega</p>
+			<input type="text" id="clientAddress">
+		</div>
+
+		<div class="item flexColumn">
+			<p>Costo del domicilio</p>
+			<input type="number" value="5000" id="deliveryCost">
+		</div>
+
+		<div class="item flexColumn">
+			<p>Monto abonado</p>
+			<input type="number" value="0" id="ammountPayed">
+		</div>
+
+		<div class="item flexRow list">
+			<p class="space">Producto</p>
+			<p class="space">Cantidad</p>
+			<p class="space">Subtotal</p>
+		</div>
+
+		<div class="productList">
+
+		</div>
+
+		<div class="item flexColumn">
+			<p>Total sin domicilio</p>
+			<p class="total">0</p>
+		</div>
+
+		<div class="item flexColumn">
+			<button type="button" class="btn btn-outline btn-lg btn-block submit">Realizar Pedido</button>
+		</div>
+	</div>
+
+</body>

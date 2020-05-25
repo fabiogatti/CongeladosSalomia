@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Consultar pedidos - Congelados Salomia</title>
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+
+	<link rel="stylesheet" href="style.css">
+
+
+
+
+
+</head>
+
+<body class="flexColumn">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+	
+	<!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+	<script src="https://kit.fontawesome.com/49069adac5.js" crossorigin="anonymous"></script>
+
+
+
+	<script type="text/javascript" src="js/main.js"></script>
+
+	<div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center" >
+			<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="z-index: -1">
+			  <div class="toast-header">
+			    <strong class="mr-auto">Exito</strong>
+
+			    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+			      <span aria-hidden="true">&times;</span>
+			    </button>
+			  </div>
+			  <div class="toast-body">
+			    Pedidos traidos exitosamente!
+			  </div>
+			</div>
+		</div>
+
+	
+	<div id="logo" class="flexColumn">
+		<img src="img/logo2.png">
+		<h2>Consultar pedidos</h2>
+	</div>
+
+	<div id="mainContent" class="scrollbar-sunny-morning">
+
+		<button class="btn btn-outline btn-lg btn-block dateBtn"><i class="fas fa-sort-down rotate"></i> Fecha de consulta</button>
+		
+		<div class="item flexColumn dateDiv">
+			<input type="text" class="dateInput" readonly>
+			<div id="datepicker" class="item"></div>
+			<button class="btn btn-block customBtn item bring" type="button">Traer pedidos</button>
+		</div>
+
+		<div class="modal modal1" tabindex="-1" role="dialog">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title">Alerta!</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body" style="color:black;">
+		        <p>Parece que no hay pedidos para la fecha especificada, intenta seleccionando otra fecha</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary customBtn2" data-dismiss="modal">Cerrar</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="modal modal2" tabindex="-1" role="dialog">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title">Éxito!</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body" style="color:black;">
+		        <p>Se han modificado los pedidos seleccionados</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary customBtn2" data-dismiss="modal">Cerrar</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div class="item flexRow filterDiv" hidden>
+			<p class="filterP">Filtrar pedidos chequeados</p>
+			<input type="checkbox" class="filter">
+		</div>
+
+		<!--<div class="item flexColumn">
+			<div id="datepicker"></div>
+			<p class="date"></p>
+		</div>-->
+
+		<!--<div class="accordion" id="accordionExample">
+		  <div class="card">
+		    <div class="card-header row" id="headingOne">
+		      <h2 class="col-11">
+		        <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">
+		          Cliente 1
+		        </button>
+		      </h2>
+		      <input type="checkbox" id="checkBox1" class="check col-1">
+		    </div>
+
+		    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+		      <div class="card-body">
+		        <div class="flexRow">
+		        	<p>Nombre</p>
+					<p>Alejandro</p>
+		        </div>
+		        <div class="flexRow">
+		        	<p>Dirección</p>
+					<p>Carrera 47 #5a-64</p>
+		        </div>
+		        <div class="flexRow">
+		        	<p>Nombre</p>
+					<p>Alejandro</p>
+		        </div>
+		        <div class="flexRow item">
+		        	<p>Producto</p>
+					<p>Cantidad</p>
+					<p>Subtotal</p>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+
+
+		  <div class="card">
+		    <div class="card-header" id="headingTwo">
+		      <h2 class="mb-0">
+		        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+		          Collapsible Group Item #2
+		        </button>
+		      </h2>
+		    </div>
+		    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+		      <div class="card-body">
+		        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+		      </div>
+		    </div>
+		  </div>
+
+		  <div class="card">
+		    <div class="card-header" id="headingThree">
+		      <h2 class="mb-0">
+		        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+		          Collapsible Group Item #3
+		        </button>
+		      </h2>
+		    </div>
+		    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+		      <div class="card-body">
+		        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+		      </div>
+		    </div>
+		  </div>
+		</div>-->
+
+		<div class="accordion" id="accordion">
+
+		</div>
+
+		<div class="flexColumn">
+			<button type="button" class="btn btn-outline btn-lg btn-block submit" disabled>Guardar Cambios</button>
+		</div>
+
+	</div>
+
+</body>
+

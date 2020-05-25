@@ -1,0 +1,288 @@
+
+
+.flexColumn{
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	flex-direction: column;
+}
+
+.flexRow{
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	flex-direction: row;
+}
+
+body{
+  	height:95vh;
+  	background-color: #ffb848 !Important;
+	/*background-image: url("img/checkered-pattern.png");*/
+	background-image: url("img/dark-denim-3.png");
+}
+
+#logo{
+	margin-top:20px;
+	color: #FECE15;
+  	margin-bottom: 20px;
+}
+
+img{
+	margin: 0;
+}
+
+#mainContent{
+	width: 50vw;
+	/*min-height: 70vh;*/
+	overflow-y: scroll;
+	background-color: #ffd38e;
+	margin: 0;
+	border-radius: 20px;
+	-webkit-box-shadow: 10px 10px 20px -5px rgba(0,0,0,0.61);
+	-moz-box-shadow: 10px 10px 20px -5px rgba(0,0,0,0.61);
+	box-shadow: 10px 10px 20px -5px rgba(0,0,0,0.61);
+}
+
+.item{
+	margin-top:20px;
+	text-align: center;
+}
+
+.flexRow p{
+	font-size: 1.15em;
+	color: black;
+	width: 50%;
+	text-align: center
+}
+
+.accordion .btn{
+	font-size: 0.60em;
+}
+
+
+
+
+input{
+	border-radius: 20px;
+	text-align: center;
+	border-width: 0;
+	font-size: 1.25em;
+	width: 50%;
+	height: 25px;
+	color:#eea236;
+}
+
+
+
+.customBtn{
+	width: 25vw;
+	margin: 15px;
+	margin-bottom: 20px;
+	border-radius: 20px;
+	border:2px solid #eea236;
+	background-color: transparent;
+	color: #eea236;
+	font-size: 1.2em;
+	font-weight: bold;
+	transition: all .5s;
+}
+
+.customBtn:hover{
+	background-color: #eea236 !Important;
+	color: #fff;
+	border:2px solid #fff;
+}
+
+
+.rotate{
+    -moz-transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+}
+
+.rotate.down{
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+
+
+.btn-outline {
+	color: #fff !Important;
+    background-color: #f0ad4e !Important;
+    transition: all .5s;
+    border-radius: 0px;
+}
+
+.btn-outline:hover{
+    background-color: #eea236 !Important;
+}
+
+
+.modal-header{
+	color: #eea236 !Important;
+	font-size: 1.50em !Important;
+	font-weight: bold;
+}
+
+.modal-body p{
+	color: #eea236 !Important;
+	font-size: 1.25em !Important;
+	text-align: center;
+}
+
+.customBtn2{
+	background-color: #eea236 !Important;
+	border-color: #ffffff;
+}
+
+.toast{
+	top:45% !Important;
+	position: absolute;
+}
+
+.check{
+	width: 25px;
+}
+
+.card-header{
+	margin-left: 0px !Important;
+	margin-right: 0px !Important;
+}
+
+.card-header h2{
+	width: 50%;
+	text-align: center !Important;
+}
+
+.card-header input{
+	margin-top: 10px;
+}
+
+.row{
+	cursor: pointer !Important;
+}
+
+
+.filterP{
+	text-align: center;
+	width: 75%;
+	color: #eea236 !Important;
+	font-weight: bold;
+	font-size: 1.3em !Important;
+}
+
+.filter{
+	text-align: center;
+	width: 25%;
+	margin-bottom: 20px;
+}
+
+.card{
+	background-color: #f0ad4e !Important;
+}
+
+.collapse,.collapsing{
+	background-color: #fbecd6 !Important;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.headerText{
+	font-weight: bold;
+	color: #ffffff;
+	transition: all .5s;
+}
+
+.headerText:hover{
+	color: #000000;
+}
+
+
+
+
+
+
+/* MODIFY THE SCROLLBAR COLOR */
+
+.scrollbar-sunny-morning::-webkit-scrollbar {
+	border-radius: 10px;
+	width: 12px;
+	background-color: #F5F5F5; 
+}
+
+.scrollbar-sunny-morning::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+	background-image: -webkit-linear-gradient(330deg, #f6d365 0%, #fda085 100%);
+	background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%); 
+}
+
+.scrollbar-sunny-morning {
+	scrollbar-color: #f6d365 #F5F5F5;
+}
+
+
+
+
+
+/* Modify the colors of the datepicker */
+
+.ui-datepicker-header{
+	background-color: #fceedb;
+	border:0px;
+}
+
+.ui-datepicker-calendar a{
+	background-color: #ffffff !Important;
+	border:1px solid #ffffff !Important;
+	border-radius: 5px;
+}
+
+.ui-datepicker-inline{
+	background-color: #f6ce95 !Important;
+	border-color: #eea236 !Important;
+}
+
+.ui-datepicker-calendar .ui-state-highlight{
+	color: #ffffff !Important;
+	background-color: #f9deb8 !Important;
+
+}
+
+.ui-datepicker-calendar .ui-state-active{
+	color: #ffffff !Important;
+	background-color: #f4c583 !Important;
+	border:1px solid #eea236 !Important;
+}
+
+
+/* MEDIA QUERY FOR ADJUSTING SIZE */
+
+@media (max-width: 500px) {
+    input{
+		width: 90%;
+  	}
+  	#mainContent{
+  		width: 90vw;
+  	}
+  	.customBtn{
+		width: 90%;
+	}
+}
+
+@media (max-width: 750px) and (min-width: 501px) {
+    input{
+		width: 75%;
+  	}
+  	#mainContent{
+  		width: 75vw;
+  	}
+  	.customBtn{
+		width: 75%;
+	}
+}
